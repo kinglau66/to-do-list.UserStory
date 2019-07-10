@@ -49,10 +49,20 @@ public class ToDoList {
 	}
 
 	public Task removeTask(String description) {
-		return tasks.remove(description);
+		Task ret = 
+		 tasks.remove(description);
+		if(ret != null)
+		System.out.print("Removed : (" + ret.print() + ")");
+		else
+		System.out.print("Nothing is removed");
+		return ret;
 	}
 
 	public Collection<Task> getAllTasks() {
+		for (Task i : tasks.values()) {
+			//ret.add(i);
+			System.out.print(i.print());
+		  }
 		return tasks.values();
 	}
 
@@ -61,8 +71,10 @@ public class ToDoList {
 		Collection<Task> allTasks = new ArrayList<Task>();
 		allTasks = getAllTasks();
 		for (Task task : allTasks)
-			if (task.isComplete() == true)
+			if (task.isComplete() == true){
+				System.out.print(task.print());
 				completedTasks.add(task);
+			}
 		return completedTasks;
 	}
 
@@ -71,8 +83,11 @@ public class ToDoList {
 		Collection<Task> allTasks = new ArrayList<Task>();
 		allTasks = getAllTasks();
 		for (Task task : allTasks)
-			if (task.getPriority() == priority)
+			if (task.getPriority() == priority){
+				//System.out.print(task.print());
 				completedTasks.add(task);
+			}
+				
 		return completedTasks;
 	}
 	
@@ -81,8 +96,11 @@ public class ToDoList {
 		Collection<Task> allTasks = new ArrayList<Task>();
 		allTasks = getAllTasks();
 		for (Task task : allTasks)
-			if (task.getCategory().equals(categoryName))
+			if (task.getCategory().equals(categoryName)){
 				catTasks.add(task);
+				System.out.print(task.print());
+			}
 		return catTasks;
 	}
+
 }
