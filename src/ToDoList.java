@@ -85,4 +85,11 @@ public class ToDoList {
 				catTasks.add(task);
 		return catTasks;
 	}
+	
+	public Task searchForTask(Task task) {
+		
+		Task searchTask = tasks.get(task.getDescription());
+		
+		return searchTask;
+	}
 }
