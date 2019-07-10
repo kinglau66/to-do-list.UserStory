@@ -75,4 +75,14 @@ public class ToDoList {
 				completedTasks.add(task);
 		return completedTasks;
 	}
+	
+	public Collection<Task> getCategory(String categoryName) {
+		Collection<Task> catTasks = new ArrayList<Task>();
+		Collection<Task> allTasks = new ArrayList<Task>();
+		allTasks = getAllTasks();
+		for (Task task : allTasks)
+			if (task.getCategory().equals(categoryName))
+				catTasks.add(task);
+		return catTasks;
+	}
 }

@@ -82,4 +82,19 @@ public class ToDoListTest extends TestCase{
 		Collection<Task> tasks = todoList.getPriorityTask(1);
 		assertEquals(1, tasks.size());
 	}
+	@Test
+	public void testGetCategoryTasks() {
+		task1.setComplete(true);
+		task3.setComplete(true);
+		task1.setCategory("shopping");
+		task3.setCategory("outing");
+		todoList.addTask(task1);
+		todoList.addTask(task2);
+		todoList.addTask(task3);
+		
+		Collection<Task> tasks = todoList.getCategory("shopping");
+		assertEquals(1, tasks.size());
+		tasks = todoList.getCategory("outing");
+		assertEquals(1, tasks.size());
+	}
 }

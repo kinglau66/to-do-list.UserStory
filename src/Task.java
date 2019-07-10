@@ -4,6 +4,16 @@ public class Task {
 	private boolean isComplete = false;
 	//	priority from 0-2
 	private int priority = 0;
+	private Category category= null;
+	
+	public String getCategory() {
+		return category.getCatName();
+	}
+
+	public void setCategory(String catName) {
+		this.category.setCatName(catName);
+	}
+
 	public Task(String description) {
 		super();
 		this.description = description;
