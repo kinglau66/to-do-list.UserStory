@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -105,15 +106,18 @@ public class ToDoList {
 			}
 		return catTasks;
 	}
-<<<<<<< HEAD
 	
-	public Task searchForTask(Task task) {
+	public Collection<Task> searchTaskByDescription(String queryString) {
 		
-		Task searchTask = tasks.get(task.getDescription());
-		
-		return searchTask;
+		Collection<Task> allTasks = new ArrayList<Task>();
+		Collection<Task> searchTasks = new ArrayList<Task>();
+		allTasks = getAllTasks();
+		for (Task task : allTasks)
+			if (task.getDescription().contains(queryString)){
+				searchTasks.add(task);
+				//System.out.print(task.print());
+			}
+		return searchTasks;
 	}
-=======
 
->>>>>>> e51cd51872c788f935f53cb1db7959a45fbbfd6d
 }
