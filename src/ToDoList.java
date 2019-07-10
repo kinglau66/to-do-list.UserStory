@@ -52,17 +52,20 @@ public class ToDoList {
 		Task ret = 
 		 tasks.remove(description);
 		if(ret != null)
-		System.out.print("Removed : (" + ret.print() + ")");
+		System.out.print("Removed : (" + ret.print() + ")\n");
 		else
-		System.out.print("Nothing is removed");
+		System.out.print("Removed : None(!)\n");
 		return ret;
 	}
 
 	public Collection<Task> getAllTasks() {
+		
+		System.out.print("/// " + "TaskList of size " + String.format("%03d", tasks.size()) +  " ///\n"); 
 		for (Task i : tasks.values()) {
 			//ret.add(i);
 			System.out.print(i.print());
 		  }
+		System.out.print("/// " + "_____________________" + " ///\n"); 
 		return tasks.values();
 	}
 
@@ -98,7 +101,7 @@ public class ToDoList {
 		for (Task task : allTasks)
 			if (task.getCategory().equals(categoryName)){
 				catTasks.add(task);
-				System.out.print(task.print());
+				//System.out.print(task.print());
 			}
 		return catTasks;
 	}
