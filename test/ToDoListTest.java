@@ -124,12 +124,6 @@ public class ToDoListTest extends TestCase {
 		todoList.addTask(task1);
 		assertEquals(task1.print(), todoList.getTask(task1.getDescription()).print());
 	}
-	
-	@Test
-	public void testUpdateExistingTaskInTodoList() {
-		// todo
-//		String updateCat, updateDescrip = "";
-	}
 
 	@Test
 	public void testForExistingTask() {
@@ -143,4 +137,20 @@ public class ToDoListTest extends TestCase {
 		// should expect 1 since new task is not added
 		assertEquals(1, collection.size());
 	}
+	
+	@Test 
+	public void testToDoListSeachFunction() {
+		ToDoList todoList = new ToDoList();
+		Task task = new Task("desc", false);
+		Task newTask = new Task("desc1", false);
+		Task newTask2 = new Task("notdess", false);
+		Collection<Task> collection = todoList.searchTaskByDescription("desc");
+		assertTrue(collection.isEmpty());
+		todoList.addTask(task);
+		todoList.addTask(newTask);
+		todoList.addTask(newTask2);
+		collection = todoList.searchTaskByDescription("desc");
+
+		// should expect 1 since new task is not added
+		assertEquals(2, collection.size());	}
 }
