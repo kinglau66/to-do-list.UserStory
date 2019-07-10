@@ -34,6 +34,14 @@ public class Task {
 		this.isComplete = isComplete;
 		this.priority = priority;
 	}
+	
+	public Task(String description, boolean isComplete, int priority, String caString) {
+		super();
+		this.description = description;
+		this.isComplete = isComplete;
+		this.priority = priority;
+		this.category = new Category(caString);
+	}
 
 	public String getDescription() {
 		return description;
@@ -60,7 +68,9 @@ public class Task {
 	}
 
 	public String print() {
-		return "{" + this.description + " [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"+"}\n";
+		return "{" + this.description + 
+		" [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"
+		+"}\n";
 	}
 
 }
