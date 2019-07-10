@@ -34,14 +34,6 @@ public class Task {
 		this.isComplete = isComplete;
 		this.priority = priority;
 	}
-	
-	public Task(String description, boolean isComplete, int priority, String caString) {
-		super();
-		this.description = description;
-		this.isComplete = isComplete;
-		this.priority = priority;
-		this.category = new Category(caString);
-	}
 
 	public String getDescription() {
 		return description;

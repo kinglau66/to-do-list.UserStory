@@ -61,12 +61,12 @@ public class ToDoList {
 
 	public Collection<Task> getAllTasks() {
 		
-		System.out.print("/// " + "TaskList of size " + String.format("%03d", tasks.size()) +  " ///\n"); 
+		System.out.print("/// " + "List of size " + String.format("%03d", tasks.size()) +  " ///\n"); 
 		for (Task i : tasks.values()) {
 			//ret.add(i);
 			System.out.print(i.print());
 		  }
-		System.out.print("/// " + "_____________________" + " ///\n"); 
+		System.out.print("/// " + "________________" + " ///\n"); 
 		return tasks.values();
 	}
 
@@ -79,6 +79,7 @@ public class ToDoList {
 				System.out.print(task.print());
 				completedTasks.add(task);
 			}
+		System.out.print("/// " + "List of size " + String.format("%03d", allTasks.size()) +  " ///\n");
 		return completedTasks;
 	}
 
@@ -91,7 +92,7 @@ public class ToDoList {
 				//System.out.print(task.print());
 				completedTasks.add(task);
 			}
-				
+		System.out.print("/// " + "List of size " + String.format("%03d", allTasks.size()) +  " ///\n");				
 		return completedTasks;
 	}
 	
@@ -104,6 +105,7 @@ public class ToDoList {
 				catTasks.add(task);
 				//System.out.print(task.print());
 			}
+		System.out.print("/// " + "List of size " + String.format("%03d", allTasks.size()) +  " ///\n");
 		return catTasks;
 	}
 	
@@ -117,6 +119,7 @@ public class ToDoList {
 				searchTasks.add(task);
 				//System.out.print(task.print());
 			}
+		System.out.print("/// " + "List of size " + String.format("%03d", allTasks.size()) +  " ///\n"); 
 		return searchTasks;
 	}
 
