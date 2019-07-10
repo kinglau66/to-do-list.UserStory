@@ -49,6 +49,7 @@ public class ToDoListTest extends TestCase{
 		todoList.completeTask(task1.getDescription());
 		assertEquals(true, todoList.getStatus(task1.getDescription()));
 	}
+	
 	@Test
 	public void testRemoveTask() {
 		assertNotNull(todoList);
@@ -58,6 +59,8 @@ public class ToDoListTest extends TestCase{
 		todoList.removeTask(task1.getDescription());
 		assertNull(todoList.getTask(task1.getDescription()));	
 	}
+	
+	
 	@Test
 	public void testGetCompletedTasks() {
 		task1.setComplete(true);
@@ -97,4 +100,19 @@ public class ToDoListTest extends TestCase{
 		tasks = todoList.getCategory("outing");
 		assertEquals(1, tasks.size());
 	}
+	
+	@Test 
+	public void testRemoveTaskButCannotFind() {
+		int initNumOfTask = todoList.getAllTasks().size();
+		todoList.removeTask("Not Existing");
+		assertEquals(initNumOfTask,todoList.getAllTasks().size());
+	}
+	
+	@Test
+	public void testRemoveLastTaskAndReturnIsEmpty() {
+		todoList.addTask(task1);
+		todoList.removeTask(task1.getDescription());
+		assertTrue(todoList.getAllTasks().isEmpty());
+	}
+	
 }
