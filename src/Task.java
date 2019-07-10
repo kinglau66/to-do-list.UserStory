@@ -59,4 +59,8 @@ public class Task {
 		return this.priority;
 	}
 
+	public String print() {
+		return "{" + this.description + " [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"+"}\n";
+	}
+
 }
