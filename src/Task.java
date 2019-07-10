@@ -69,8 +69,9 @@ public class Task {
 
 	public String print() {
 		return "{" + this.description + 
-		" [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"
-		+"}\n";
+				" [Completed:" + (this.isComplete ? "Yes" : "No")+ "]" +
+				" [Priority (0-2, -1 for not existing) :" + (this.priority)+ "]" +
+				" [Category :" + (this.getCategory() + "]" + "}\n");
 	}
 
 }
