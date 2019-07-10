@@ -1,6 +1,11 @@
 
 public class Category {
-	private String catName= null;
+	private String catName = null;
+
+	public Category(String catName) {
+		super();
+		this.catName = catName;
+	}
 
 	String getCatName() {
 		return catName;
