@@ -105,7 +105,6 @@ public class ToDoList {
 			}
 		return catTasks;
 	}
-<<<<<<< HEAD
 	
 	public Task searchForTask(Task task) {
 		
@@ -113,7 +112,5 @@ public class ToDoList {
 		
 		return searchTask;
 	}
-=======
 
->>>>>>> e51cd51872c788f935f53cb1db7959a45fbbfd6d
 }

@@ -60,7 +60,9 @@ public class Task {
 	}
 
 	public String print() {
-		return "{" + this.description + " [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"+"}\n";
+		return "{" + this.description + 
+		" [Completed:" + (this.isComplete ? "Yes" : "No")+ "]"
+		+"}\n";
 	}
 
 }
